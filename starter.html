@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Campus Help Center helps university students report campus service issues and track requests."
+    >
+
+    <title>Campus Help Center | University Services</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container">
+            <h1>Campus Help Center</h1>
+
+            <p>
+                Your university support service for a better campus experience.
+            </p>
+        </div>
+    </header>
+
+    <nav class="main-navigation" aria-label="Main navigation">
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#requests">Service Requests</a></li>
+                <li><a href="#create-request">Create a Request</a></li>
+                <li><a href="#help">Help</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container" id="home">
+
+        <section class="welcome-section" aria-labelledby="welcome-heading">
+            <h2 id="welcome-heading">Welcome to Campus Support</h2>
+
+            <p>
+                Use this page to review current service requests and report
+                problems affecting university facilities and services.
+            </p>
+        </section>
+
+        <section id="requests" aria-labelledby="requests-heading">
+            <h2 id="requests-heading">Current Service Requests</h2>
+
+            <p>
+                The following examples demonstrate how campus service
+                requests can be displayed.
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <caption>Sample campus service requests</caption>
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Request ID</th>
+                            <th scope="col">Service</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>REQ-101</td>
+                            <td>Wi-Fi Connection</td>
+                            <td>Library</td>
+                            <td>
+                                <span class="status pending">Pending</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>REQ-102</td>
+                            <td>Classroom Projector</td>
+                            <td>Room B204</td>
+                            <td>
+                                <span class="status progress">In Progress</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>REQ-103</td>
+                            <td>Air Conditioning</td>
+                            <td>Science Building</td>
+                            <td>
+                                <span class="status resolved">Resolved</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section
+            id="create-request"
+            aria-labelledby="form-heading"
+        >
+            <h2 id="form-heading">Create a Service Request</h2>
+
+            <p>
+                Complete the form below to describe the problem you need
+                assistance with.
+            </p>
+
+            <form action="#" method="get">
+
+                <fieldset>
+                    <legend>Requester Information</legend>
+
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+
+                        <input
+                            type="text"
+                            id="full-name"
+                            name="fullName"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">University Email</label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            placeholder="student@example.com"
+                            required
+                        >
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Request Details</legend>
+
+                    <div class="form-group">
+                        <label for="service">Service Category</label>
+
+                        <select
+                            id="service"
+                            name="service"
+                            required
+                        >
+                            <option value="">Select a service</option>
+                            <option value="internet">Internet and Wi-Fi</option>
+                            <option value="equipment">Classroom Equipment</option>
+                            <option value="maintenance">Building Maintenance</option>
+                            <option value="electricity">Electricity and Lighting</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Campus Location</label>
+
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="Building, room, or location"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="priority">Priority Level</label>
+
+                        <select
+                            id="priority"
+                            name="priority"
+                            required
+                        >
+                            <option value="">Choose priority</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Problem Description</label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="5"
+                            minlength="10"
+                            maxlength="1000"
+                            placeholder="Describe the problem in at least 10 characters."
+                            required
+                        ></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Submit Request</button>
+
+            </form>
+        </section>
+
+        <aside class="response-information" aria-labelledby="response-heading">
+            <h2 id="response-heading">Response Time Information</h2>
+
+            <p>
+                Response times depend on the type and priority of the request.
+                Urgent issues may require additional attention.
+            </p>
+
+            <ul>
+                <li>Low priority: reviewed during normal working hours.</li>
+                <li>Medium priority: reviewed as soon as staff are available.</li>
+                <li>High priority: requires prompt attention.</li>
+            </ul>
+        </aside>
+
+        <section id="help" aria-labelledby="help-heading">
+            <h2 id="help-heading">Need Help?</h2>
+
+            <p>
+                For assistance with a service request, contact the campus
+                support team through your university's official support
+                channels.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>
+                &copy; 2026 Campus Help Center. University Support Services.
+            </p>
+
+            <p>
+                This interface is an academic project created to demonstrate
+                semantic HTML and accessible form design.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
