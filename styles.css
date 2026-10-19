@@ -1,5 +1,17 @@
 /* General page styles */
+/* Responsive interface improvements */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
 * {
     box-sizing: border-box;
 }
@@ -18,10 +30,9 @@ body {
 }
 
 .container {
-    width: min(1100px, 92%);
-    margin: 0 auto;
+    width: min(100% - 2rem, 68.75rem);
+    margin-inline: auto;
 }
-
 /* Header */
 
 .site-header {
@@ -272,5 +283,90 @@ button:hover {
 
     button {
         width: 100%;
+    }
+}
+/* Responsive layout improvements */
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+    padding-block: 1.5rem;
+}
+
+section,
+aside {
+    min-width: 0;
+    margin-bottom: 0;
+    padding: clamp(1rem, 3vw, 1.75rem);
+}
+
+.table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    min-width: 34rem;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+button {
+    min-height: 44px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #f0b429;
+    outline-offset: 3px;
+}
+
+.arabic-notice {
+    direction: rtl;
+    text-align: right;
+    border-inline-start: 5px solid #245580;
+    background-color: #ffffff;
+}
+
+@media (min-width: 48rem) {
+    main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: start;
+    }
+
+    .welcome-section,
+    #requests,
+    #create-request,
+    #help {
+        grid-column: 1 / -1;
+    }
+
+    .response-information {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 70rem) {
+    .site-header {
+        padding-block: 2.5rem;
+    }
+
+    main {
+        gap: 1.5rem;
     }
 }
