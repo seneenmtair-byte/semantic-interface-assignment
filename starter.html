@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -43,14 +44,14 @@
             <h2 id="welcome-heading">Welcome to Campus Support</h2>
 
             <p>
-
-                Use this page to review current service requests and report
-                problems affecting university facilities and services.
+              Use this page to review current service requests and report
+              problems affecting university facilities and services.
             </p>
             <p class="arabic-notice" lang="ar" dir="rtl">
-    مرحبًا بكم في مركز الدعم الجامعي. يمكنكم متابعة طلبات الصيانة
-    والإبلاغ عن المشكلات التي تؤثر في مرافق الجامعة وخدماتها.
-</p>        </section>
+              مرحبًا بكم في مركز الدعم الجامعي. يمكنكم متابعة طلبات الصيانة
+              والإبلاغ عن المشكلات التي تؤثر في مرافق الجامعة وخدماتها.
+            </p>        
+        </section>
 
         <section id="requests" aria-labelledby="requests-heading">
             <h2 id="requests-heading">Current Service Requests</h2>
@@ -62,199 +63,115 @@
 
             <div class="table-wrapper">
                 <div class="table-responsive">
-  <table class="table table-striped table-hover table-bordered align-middle">
-    <caption>Sample campus service requests</caption>
-    <thead class="table-dark">
-      <tr>
-        <th scope="col">Request ID</th>
-        <th scope="col">Service</th>
-        <th scope="col">Location</th>
-        <th scope="col">Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- محتوى الـ tbody مثل ما هو عندك بالصورة -->
-      <tr>
-        <td>REQ-101</td>
-        <td>Wi-Fi Connection</td>
-        <td>Library</td>
-        <td>
-          <span class="badge bg-warning text-dark">Pending</span>
-        </td>
-      </tr>
-      <tr>
-        <td>REQ-102</td>
-        <td>Classroom Projector</td>
-        <td>Room B204</td>
-        <td>
-          <span class="badge bg-primary">In Progress</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+                  <table class="table table-striped table-hover table-bordered align-middle">
+                    <caption>Sample campus service requests</caption>
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">Request ID</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>REQ-101</td>
+                        <td>Wi-Fi Connection</td>
+                        <td>Library</td>
+                        <td>
+                          <span class="badge bg-warning text-dark">Pending</span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>REQ-102</td>
+                        <td>Classroom Projector</td>
+                        <td>Room B204</td>
+                        <td>
+                          <span class="badge bg-primary">In Progress</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
         </section>
 
-        <section
-           <section id="create-request" aria-labelledby="form-heading" class="card shadow-sm p-4 my-4">
-  <h2 id="form-heading" class="h4 mb-3">Create a Service Request</h2>
-  <p class="text-muted">
-    Complete the form below to describe the problem you need assistance with.
-  </p>
+        <!-- قسم النموذج مضبوط بالكامل -->
+        <section id="create-request" aria-labelledby="form-heading" class="card shadow-sm p-4 my-4">
+          <h2 id="form-heading" class="h4 mb-3">Create a Service Request</h2>
+          
+          <div class="alert alert-warning alert-dismissible fade show" role="alert" style="background-color: #fff3cd; color: #856404; border-color: #ffeeba; padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 0.25rem;">
+            <strong>Important Notice:</strong> Please review your service request details before submitting.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: left; background: transparent; border: 0; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .5; cursor: pointer;"></button>
+          </div>
+          
+          <p class="text-muted">
+            Complete the form below to describe the problem you need assistance with.
+          </p>
 
-  <form action="#" method="get" class="needs-validation" novalidate>
-    <!-- حقول معلومات صاحب الطلب -->
-    <fieldset class="border p-3 rounded mb-3">
-      <legend class="float-none w-auto px-2 fs-6 fw-bold">Requester Information</legend>
-      
-      <div class="mb-3">
-        <label for="full-name" class="form-label">Full Name</label>
-        <input type="text" class="form-control" id="full-name" name="fullName" autocomplete="name" required>
-        <div class="invalid-feedback">Please enter your full name.</div>
-      </div>
+          <!-- أضفنا novalidate لمنع التحقق الافتراضي القبيح للمتصفح والاعتماد على Bootstrap -->
+          <form action="javascript:void(0)" method="get" class="needs-validation" novalidate>
 
-      <div class="mb-3">
-        <label for="userEmail" class="form-label">University Email</label>
-        <input type="email" class="form-control" id="userEmail" name="email" required placeholder="name@student.edu">
-        <div class="invalid-feedback">Please enter a valid email.</div>
-      </div>
-    </fieldset>
+            <!-- حقول معلومات صاحب الطلب -->
+            <fieldset class="border p-3 rounded mb-3">
+              <legend class="float-none w-auto px-2 fs-6 fw-bold">Requester Information</legend>
+              
+              <div class="mb-3">
+                <label for="full-name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="full-name" name="fullName" autocomplete="name" required>
+                <div class="invalid-feedback">Please enter your full name.</div>
+              </div>
 
-    <!-- حقول تفاصيل الطلب -->
-    <fieldset class="border p-3 rounded mb-3">
-      <legend class="float-none w-auto px-2 fs-6 fw-bold">Request Details</legend>
-      
-      <div class="mb-3">
-        <label for="serviceType" class="form-label">Service Category</label>
-        <select class="form-select" id="serviceType" required>
-          <option selected disabled value="">Choose service...</option>
-          <option value="wifi">Wi-Fi Connection</option>
-          <option value="projector">Classroom Projector</option>
-          <option value="maintenance">Maintenance</option>
-        </select>
-        <div class="invalid-feedback">Please select a service.</div>
-      </div>
-    </fieldset>
+              <div class="mb-3">
+                <label for="userEmail" class="form-label">University Email</label>
+                <input type="email" class="form-control" id="userEmail" name="email" required placeholder="name@student.edu">
+                <div class="invalid-feedback">Please enter a valid email.</div>
+              </div>
+            </fieldset>
 
-    <button type="submit" class="btn btn-primary">Submit Request</button>
-  </form>
-</section>
-                            type="email"
-                            id="email"
-                            name="email"
-                            autocomplete="email"
-                            placeholder="student@example.com"
-                            required
-                        >
-                    </div>
-                </fieldset>
+            <!-- حقول تفاصيل الطلب -->
+            <fieldset class="border p-3 rounded mb-3">
+              <legend class="float-none w-auto px-2 fs-6 fw-bold">Request Details</legend>
+              
+              <div class="mb-3">
+                <label for="serviceType" class="form-label">Service Category</label>
+                <select class="form-select" id="serviceType" required>
+                  <option selected disabled value="">Choose service...</option>
+                  <option value="wifi">Wi-Fi Connection</option>
+                  <option value="projector">Classroom Projector</option>
+                  <option value="maintenance">Maintenance</option>
+                </select>
+                <div class="invalid-feedback">Please select a service.</div>
+              </div>
+            </fieldset>
 
-                <fieldset>
-                    <legend>Request Details</legend>
-
-                    <div class="form-group">
-                        <label for="service">Service Category</label>
-
-                        <select
-                            id="service"
-                            name="service"
-                            required
-                        >
-                            <option value="">Select a service</option>
-                            <option value="internet">Internet and Wi-Fi</option>
-                            <option value="equipment">Classroom Equipment</option>
-                            <option value="maintenance">Building Maintenance</option>
-                            <option value="electricity">Electricity and Lighting</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="location">Campus Location</label>
-
-                        <input
-                            type="text"
-                            id="location"
-                            name="location"
-                            placeholder="Building, room, or location"
-                            required
-                        >
-                    </div>
-
-                    <div class="form-group">
-                        <label for="priority">Priority Level</label>
-
-                        <select
-                            id="priority"
-                            name="priority"
-                            required
-                        >
-                            <option value="">Choose priority</option>
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="description">Problem Description</label>
-
-                        <textarea
-                            id="description"
-                            name="description"
-                            rows="5"
-                            minlength="10"
-                            maxlength="1000"
-                            placeholder="Describe the problem in at least 10 characters."
-                            required
-                        ></textarea>
-                    </div>
-                </fieldset>
-
-                <button type="submit">Submit Request</button>
-
-            </form>
-        </section>
-
-        <aside class="response-information" aria-labelledby="response-heading">
-            <h2 id="response-heading">Response Time Information</h2>
-
-            <p>
-                Response times depend on the type and priority of the request.
-                Urgent issues may require additional attention.
-            </p>
-
-            <ul>
-                <li>Low priority: reviewed during normal working hours.</li>
-                <li>Medium priority: reviewed as soon as staff are available.</li>
-                <li>High priority: requires prompt attention.</li>
-            </ul>
-        </aside>
-
-        <section id="help" aria-labelledby="help-heading">
-            <h2 id="help-heading">Need Help?</h2>
-
-            <p>
-                For assistance with a service request, contact the campus
-                support team through your university's official support
-                channels.
-            </p>
+            <button type="submit" class="btn btn-primary">Submit Request</button>
+          </form>
         </section>
 
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>
-                &copy; 2026 Campus Help Center. University Support Services.
-            </p>
+    <!-- كود الـ JavaScript المُعدل ليعمل مع Bootstrap بشكل صحيح -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        if (!form) return;
 
-            <p>
-                This interface is an academic project created to demonstrate
-                semantic HTML and accessible form design.
-            </p>
-        </div>
-    </footer>
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
 
+            // فحص صحة الحقول باستخدام خاصية checkValidity المدمجة
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+                // إضافة كلاس was-validated لإظهار الإشارات والحدود الحمراء
+                form.classList.add("was-validated");
+                alert("Please fill in all required fields correctly!");
+            } else {
+                form.classList.remove("was-validated");
+                alert("Your service request has been validated successfully!");
+            }
+        });
+    });
+    </script>
 </body>
 </html>
