@@ -96,23 +96,20 @@
             </div>
         </section>
 
-        <!-- قسم النموذج مضبوط بالكامل -->
         <section id="create-request" aria-labelledby="form-heading" class="card shadow-sm p-4 my-4">
           <h2 id="form-heading" class="h4 mb-3">Create a Service Request</h2>
           
-          <div class="alert alert-warning alert-dismissible fade show" role="alert" style="background-color: #fff3cd; color: #856404; border-color: #ffeeba; padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 0.25rem;">
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
             <strong>Important Notice:</strong> Please review your service request details before submitting.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: left; background: transparent; border: 0; font-size: 1.5rem; font-weight: 700; line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; opacity: .5; cursor: pointer;"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           
           <p class="text-muted">
             Complete the form below to describe the problem you need assistance with.
           </p>
 
-          <!-- أضفنا novalidate لمنع التحقق الافتراضي القبيح للمتصفح والاعتماد على Bootstrap -->
           <form action="javascript:void(0)" method="get" class="needs-validation" novalidate>
 
-            <!-- حقول معلومات صاحب الطلب -->
             <fieldset class="border p-3 rounded mb-3">
               <legend class="float-none w-auto px-2 fs-6 fw-bold">Requester Information</legend>
               
@@ -129,7 +126,6 @@
               </div>
             </fieldset>
 
-            <!-- حقول تفاصيل الطلب -->
             <fieldset class="border p-3 rounded mb-3">
               <legend class="float-none w-auto px-2 fs-6 fw-bold">Request Details</legend>
               
@@ -151,7 +147,7 @@
 
     </main>
 
-    <!-- كود الـ JavaScript المُعدل ليعمل مع Bootstrap بشكل صحيح -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", function () {
         const form = document.querySelector("form");
@@ -160,10 +156,8 @@
         form.addEventListener("submit", function (event) {
             event.preventDefault();
 
-            // فحص صحة الحقول باستخدام خاصية checkValidity المدمجة
             if (!form.checkValidity()) {
                 event.stopPropagation();
-                // إضافة كلاس was-validated لإظهار الإشارات والحدود الحمراء
                 form.classList.add("was-validated");
                 alert("Please fill in all required fields correctly!");
             } else {
